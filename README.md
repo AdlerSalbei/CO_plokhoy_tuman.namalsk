@@ -1,0 +1,1 @@
+# CO_plokhoy_tuman.namalsk
