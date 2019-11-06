@@ -46,7 +46,7 @@ if (_visualEffect) then {
 	
 	while {_brightness < 50} do {
 		
-		_brightness = _brightness+2;
+		_brightness = _brightness + 2;
 
 		[{
 			params ["_light", "_brightness"];
