@@ -5,7 +5,7 @@ if (!hasInterface) exitWith {};
 params ["_obj", "_visualEffect", "_playerEffect"];
 
 enableCamShake true;
-addCamShake [1,50,27];
+addCamShake [1,25,27];
 
 if (_visualEffect) then {
 
@@ -84,8 +84,8 @@ if (_playerEffect) then
 					
 					[{
 						"dynamicBlur" ppEffectEnable false;
-					}, [], 10] call CBA_fnc_waitAndExecute;
-				}, [], 5] call CBA_fnc_waitAndExecute;
+					}, [], 4] call CBA_fnc_waitAndExecute;
+				}, [], 3] call CBA_fnc_waitAndExecute;
 			}, [], 1] call CBA_fnc_waitAndExecute;
 		}, [], 0.1] call CBA_fnc_waitAndExecute;
 	}, [], 1] call CBA_fnc_waitAndExecute;

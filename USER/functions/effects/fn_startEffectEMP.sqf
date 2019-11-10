@@ -9,11 +9,16 @@ if (_visualEffect || _playerEffect) then {
 };
 
 [{
-	params ["_obj"];
+	params ["_obj", "_range"];
 
 	private _max = 1 + floor (random 5);
 	private _count = 0;
 	private _time = 0;
+
+	private _vehicle = nearestObjects [(getPos _obj), ["MAN", "LandVehicle"], _range];
+	{
+		[_x] remoteExecCall ["grad_user_fnc_targetEffect", 0, false];
+	}forEach _vehicle;
 
 	while {_count < _max} do {
 		_time = _time + 0.1 + (random 2);
@@ -23,4 +28,4 @@ if (_visualEffect || _playerEffect) then {
 			_this remoteExecCall ["grad_user_fnc_sparkEffect", 0, false];
 		}, [_obj, _time], _time] call CBA_fnc_waitAndExecute;
 	};
-}, [_obj], 0.1 + (random 0.1)] call CBA_fnc_waitAndExecute;
+}, [_obj, _range], 0.1 + (random 0.1)] call CBA_fnc_waitAndExecute;

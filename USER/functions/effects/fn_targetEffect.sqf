@@ -15,18 +15,18 @@ private _effect = "#particlesource" createVehicleLocal (getPos _obj);
 if (_obj isKindOf "MAN") then {
 	_effect setParticleCircle [0,[0,0,0]];
 	_effect setParticleRandom [0.2,[_maxWidth/4,_maxLength/4,_maxHeight],[0,0,0],0,0.001,[0,0,0,1],1,0];
-	_effect setParticleParams [["\A3\data_f\blesk1",1,0,1],"","SpaceObject",1,0.2,[0,0,0],[0,0,0],0,10,7.9,0,[0.002,0.002],[[1,1,0.1,1],[1,1,1,1]],[0.08], 1, 0, "", "", _obj];
+	_effect setParticleParams [["\A3\data_f\blesk1",1,0,1],"","SpaceObject",1,0.1,[0,0,0],[0,0,0],0,10,7.9,0,[0.002,0.002],[[1,1,0.1,1],[1,1,1,1]],[0.08], 1, 0, "", "", _obj];
 };
 
 if (_obj isKindOf "LandVehicle") then {
 	_effect setParticleCircle [_maxWidth-0.5,[0,0,0]];
 	_effect setParticleRandom [0.2,[0.2,0.2,_maxHeight/2-0.5],[0,0,0],0,0.02,[0,0,0,1],1,0];
-	_effect setParticleParams [["\A3\data_f\blesk1",1,0,1],"","SpaceObject",1,0.2,[0,0,0],[0,0,0],0,10,7.9,0,[0.003,0.003],[[1,1,0.1,1],[1,1,1,1]],[0.08], 1, 0, "", "", _obj];
+	_effect setParticleParams [["\A3\data_f\blesk1",1,0,1],"","SpaceObject",1,0.1,[0,0,0],[0,0,0],0,10,7.9,0,[0.003,0.003],[[1,1,0.1,1],[1,1,1,1]],[0.08], 1, 0, "", "", _obj];
 };
 
-_effect setDropInterval 0.01;
+_effect setDropInterval 0.001;
 [{
 	params ["_effect"];
 
 	deleteVehicle _effect;
-}, [_effect], 1] call CBA_fnc_waitAndExecute;
+}, [_effect], 0.7] call CBA_fnc_waitAndExecute;

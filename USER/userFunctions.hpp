@@ -16,14 +16,13 @@ class GRAD_USER {
         file = "USER\functions\init";
         
         class intro {};
-        class replaceTrees {};
+        class replaceTrees {postInit = 1;};
     };
     class outro {
         file = "USER\functions\outro";
         
         class chairCircle {};
         class closingCredits {};
-        class shuffleText {};
         class seatPlayers {};
     };
 };

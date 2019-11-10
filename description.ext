@@ -23,6 +23,7 @@ enableDebugConsole = 1;
 #include "USER\garbageCollector.hpp"
 #include "cfgEventHandlers.hpp"
 #include "cfgIslands.hpp"
+#include "cfgTreeReplacment.hpp"
 
 class missionSettings {
 	#include "USER\missionSettings.hpp"
