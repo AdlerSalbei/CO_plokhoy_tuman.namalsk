@@ -4,14 +4,6 @@
 */
 
 class GRAD_USER {
-    class effects {
-        file = "USER\functions\effects";
-        
-        class sparkEffect {};
-        class startEffectEMP {};
-        class targetEffect {};
-        class visualEffect {};
-    };
     class init {
         file = "USER\functions\init";
         
