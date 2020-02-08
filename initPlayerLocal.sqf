@@ -4,7 +4,7 @@ if (didJIP) then {
 
 ["InitializePlayer", [player,true]] call BIS_fnc_dynamicGroups;
 grad_template_ratingEH = player addEventHandler ["HandleRating",{0}];
-
+/*
 ["CBA_loadingScreenDone", {
     cutText ["","BLACK FADED", 999];
     [{time > (_this + 10)},{
@@ -20,3 +20,4 @@ grad_template_ratingEH = player addEventHandler ["HandleRating",{0}];
     }, [], 1] call CBA_fnc_waitAndExecute;
 
 }] call CBA_fnc_addEventHandler;
+*/
