@@ -4,6 +4,14 @@
 */
 
 class GRAD_USER {
+    class helocast {
+        file = "USER\functions\helocast";
+        
+        class dropBoats {};
+        class dropPlayers {};
+        class initHelo {};
+        class slowHelo {};
+    };
     class init {
         file = "USER\functions\init";
         

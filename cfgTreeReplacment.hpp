@@ -70,4 +70,17 @@ class cfgTreeReplacment {
 		replacement[] = {"CUP_les_singlestrom_b"};
 		offset[] = {0,0,0};
 	};
+	//Wall
+	class ns_jbad_wall_indcnc_4_d {
+		replacement[] = {"jbad_Wall_IndCnc_4"};
+		offset[] = {0,0,0};
+		isWall = 1;
+	};
+	/*
+	class ns_jbad_wall_indcnc_end_2 {
+		replacement[] = {"jbad_Wall_IndCnc_4"};
+		offset[] = {0,0,0};
+		isWall = 1;
+	};
+	*/
 };
