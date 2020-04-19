@@ -2,19 +2,19 @@
 
 private ["_settings"];
 
-private _shortRangeFreqs = ["shortrange"] call GRAD_radiosettings_fnc_extractFrequencies;
-private _longRangeFreqs = ["longrange"] call GRAD_radiosettings_fnc_extractFrequencies;
+_shortRangeFreqs = ["shortrange"] call GRAD_radiosettings_fnc_extractFrequencies;
+_longRangeFreqs = ["longrange"] call GRAD_radiosettings_fnc_extractFrequencies;
 
 while {count _shortRangeFreqs < 9} do {_shortRangeFreqs pushBack 30};
 while {count _longRangeFreqs < 9} do {_longRangeFreqs pushBack 32};
 if (count _shortRangeFreqs > 9) then {_shortRangeFreqs resize 9};
 if (count _longRangeFreqs > 9) then {_longRangeFreqs resize 9};
 
-private _shortRangeFreqsStr = _shortRangeFreqs apply {str _x};
-private _longRangeFreqsStr = _longRangeFreqs apply {str _x};
+_shortRangeFreqsStr = _shortRangeFreqs apply {str _x};
+_longRangeFreqsStr = _longRangeFreqs apply {str _x};
 
 //set settings
-private _guerCode = switch (true) do {
+_guerCode = switch (true) do {
     case ([west, independent] call BIS_fnc_sideIsFriendly): {"_bluefor"};
     case ([east, independent] call BIS_fnc_sideIsFriendly): {"_opfor"};
     default {"_guer"};
@@ -30,8 +30,8 @@ tf_freq_guer_lr = [0,7,_longRangeFreqsStr,0,_guerCode,-1,0,false];
 
 if (isServer) then {
     //create markers
-    private _channelNames = [] call GRAD_radiosettings_fnc_extractChannelNames;
+    _channelNames = [] call GRAD_radiosettings_fnc_extractChannelNames;
     [_channelNames] call GRAD_radiosettings_fnc_createChannelMarkers;
 };
 
-systemChat "radiosettings: loaded";
+INFO("radiosettings loaded");

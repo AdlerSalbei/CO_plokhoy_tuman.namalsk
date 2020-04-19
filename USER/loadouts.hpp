@@ -18,7 +18,7 @@
 */
 
 
-loadoutFactionBlu = "";
+loadoutFactionBlu = "TrueViking";
 loadoutFactionOpf = "";
 loadoutFactionInd = "";
 

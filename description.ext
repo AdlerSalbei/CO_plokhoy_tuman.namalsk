@@ -23,10 +23,14 @@ enableDebugConsole = 1;
 #include "USER\garbageCollector.hpp"
 #include "cfgEventHandlers.hpp"
 #include "cfgIslands.hpp"
-#include "cfgTreeReplacment.hpp"
+#include "cfgCivilians.hpp"
 
 class missionSettings {
 	#include "USER\missionSettings.hpp"
+
+	class restrictedArsenal {
+		#include "USER\restrictedArsenal.hpp"
+	};
 
 	class groupsettings {
 		#include "USER\groupsettings.hpp"
@@ -34,6 +38,10 @@ class missionSettings {
 
 	class radiosettings {
 		#include "USER\radiosettings.hpp"
+	};
+
+	class respawnSettings {
+		#include "USER\respawnSettings.hpp"
 	};
 };
 
@@ -48,15 +56,21 @@ class CfgFunctions
     #include "functions\groupsettings\cfgFunctions.hpp"
 	#include "functions\missionSetup\cfgFunctions.hpp"
     #include "functions\radiosettings\cfgFunctions.hpp"
+	#include "functions\waverespawn\cfgFunctions.hpp"
 
     #include "node_modules\grad-loadout\cfgFunctions.hpp"
+	#include "node_modules\grad-civs\cfgFunctions.hpp"
+	#include "node_modules\grad-fortifications\cfgFunctions.hpp"
 
 	#include "USER\userFunctions.hpp"
 };
 
 
 //DIALOGS ======================================================================
+#include "node_modules\grad-fortifications\grad_fortifications.hpp"
+
 class RscTitles {
+	#include "node_modules\grad-fortifications\dialog\hint\title.hpp"
 	#include "USER\userTitles.hpp"
 
     class grad_Default {
@@ -100,11 +114,27 @@ class Loadouts {
     handleRadios = 1;
     resetLoadout = 0;
 
+    #include "USER\customGear.hpp"
+
     class Faction {
         #include "node_modules\grad-factions\loadouts.hpp"
         #include "USER\userLoadouts.hpp"
     };
 };
+
+//GRAD CIVS ====================================================================
+class CfgGradCivs {
+	#include "USER\civSettings.hpp"
+
+    debugCivState = 0;
+};
+
+
+//OTHER NPM MODULES ============================================================
+class CfgGradFortifications {
+    #include "USER\userFortifications.hpp"
+};
+
 
 //Muisc =======================================================================
 class CfgMusic

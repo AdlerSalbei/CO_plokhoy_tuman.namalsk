@@ -1,8 +1,8 @@
 #include "component.hpp"
 
-private _blugroups = [];
-private _opfgroups = [];
-private _indgroups = [];
+_blugroups = [];
+_opfgroups = [];
+_indgroups = [];
 
 {
     if ((leader _x) in playableUnits) then {

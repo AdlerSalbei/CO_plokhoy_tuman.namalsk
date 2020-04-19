@@ -11,7 +11,7 @@ private _show = [missionConfigFile >> "missionSettings","showLogo",1] call BIS_f
 if (_show isEqualTo 0) exitWith {};
 
 ["CBA_loadingScreenDone", {
-    private _waitCondition = {time > (_this + 3)};
+    _waitCondition = {time > (_this + 3)};
     _show = [missionConfigFile >> "missionSettings","showLogo",1] call BIS_fnc_returnConfigEntry;
 
     if (_show isEqualType "") then {
@@ -21,8 +21,8 @@ if (_show isEqualTo 0) exitWith {};
     if (_show != 1) exitWith {};
 
     [_waitCondition,{
-        private _missionName = getMissionConfigValue ["onLoadName", "NAME NOT FOUND"];
-        private _text = format ["<img size= '6' style='vertical-align:middle' shadow='false' image='data\gruppe-adler.paa'/><br/><t size='.9' color='#FFFFFF'>%1</t>", _missionName];
+        _missionName = getMissionConfigValue ["onLoadName", "NAME NOT FOUND"];
+        _text = format ["<img size= '6' style='vertical-align:middle' shadow='false' image='data\gruppe-adler.paa'/><br/><t size='.9' color='#FFFFFF'>%1</t>", _missionName];
         [_text,0,0,2,2] spawn BIS_fnc_dynamicText;
     },time] call CBA_fnc_waitUntilAndExecute;
 

@@ -20,11 +20,9 @@ params ["_filePath"];
 private ["_ctrl", "_fileExists"];
 
 disableSerialization;
-
-private _ctrl = findDisplay 0 ctrlCreate ["RscHTML", -1];
+_ctrl = findDisplay 0 ctrlCreate ["RscHTML", -1];
 _ctrl htmlLoad _filePath;
-
-private _fileExists = ctrlHTMLLoaded _ctrl;
+_fileExists = ctrlHTMLLoaded _ctrl;
 ctrlDelete _ctrl;
 
 _fileExists

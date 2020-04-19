@@ -8,7 +8,7 @@ class EditorData
 	toggles=9;
 	class ItemIDProvider
 	{
-		nextID=2120;
+		nextID=2129;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=248;
+		nextID=250;
 	};
 	class Camera
 	{
-		pos[]={-2525.6096,30.392315,4655.374};
-		dir[]={0.54817849,-0.15516512,0.82188982};
-		up[]={0.086112246,0.98788393,0.12910883};
-		aside[]={0.83196574,1.3609679e-007,-0.55490035};
+		pos[]={6229.2031,56.22226,9212.8242};
+		dir[]={0.58029497,-0.66282666,-0.47326183};
+		up[]={0.51366925,0.7487607,-0.41892579};
+		aside[]={-0.63203555,1.8288847e-007,-0.77497572};
 	};
 };
 binarizationWanted=0;
@@ -40,13 +40,14 @@ addons[]=
 	"CUP_A_TVTower",
 	"A3_Structures_F_Walls",
 	"Wall",
-	"RHS_US_A2_AirImport"
+	"RHS_US_A2_AirImport",
+	"ace_explosives"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=12;
+		items=13;
 		class Item0
 		{
 			className="A3_Modules_F_Heli";
@@ -124,6 +125,13 @@ class AddonsMetaData
 			name="RHSUSF A2 Air Ports";
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
+		};
+		class Item12
+		{
+			className="ace_explosives";
+			name="ACE3 - Explosives";
+			author="ACE-Team";
+			url="http://ace3mod.com/";
 		};
 	};
 };
@@ -3227,7 +3235,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=55;
+		items=56;
 		class Item0
 		{
 			dataType="Layer";
@@ -7248,6 +7256,154 @@ class Mission
 				};
 				nAttributes=1;
 			};
+		};
+		class Item55
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=8;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6238.9316,42.971565,9206.6768};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						init="call{this disableAI ""MOVE"";}";
+					};
+					id=2121;
+					type="B_Soldier_SL_F";
+					atlOffset=1.1444092e-005;
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6243.9863,42.950832,9206.3711};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						init="call{this disableAI ""MOVE"";}";
+					};
+					id=2122;
+					type="B_Soldier_TL_F";
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6247.4399,42.946663,9206.2412};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						init="call{this disableAI ""MOVE"";}";
+					};
+					id=2123;
+					type="B_Soldier_F";
+				};
+				class Item3
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6250.751,42.962704,9205.6797};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						init="call{this disableAI ""MOVE"";}";
+					};
+					id=2124;
+					type="B_soldier_LAT_F";
+					atlOffset=7.6293945e-006;
+				};
+				class Item4
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6234.9292,42.99744,9207.1875};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						init="call{this disableAI ""MOVE"";}";
+					};
+					id=2125;
+					type="B_Soldier_GL_F";
+					atlOffset=-1.9073486e-005;
+				};
+				class Item5
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6231.3472,43.029213,9207.7676};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						init="call{this disableAI ""MOVE"";}";
+					};
+					id=2126;
+					type="B_soldier_exp_F";
+					atlOffset=-3.8146973e-006;
+				};
+				class Item6
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6227.8965,43.074757,9208.1973};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						init="call{this disableAI ""MOVE"";}";
+					};
+					id=2127;
+					type="B_engineer_F";
+					atlOffset=2.2888184e-005;
+				};
+				class Item7
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6223.3701,43.138428,9208.9072};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						init="call{this disableAI ""MOVE"";}";
+					};
+					id=2128;
+					type="B_medic_F";
+					atlOffset=1.1444092e-005;
+				};
+			};
+			class Attributes
+			{
+			};
+			id=2120;
+			atlOffset=1.1444092e-005;
 		};
 	};
 	class Connections

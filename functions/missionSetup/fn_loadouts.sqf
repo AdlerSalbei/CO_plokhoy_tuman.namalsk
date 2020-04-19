@@ -4,10 +4,10 @@
 
 #include "component.hpp"
 
-private _loadoutFactionBlu = [missionConfigFile,"loadoutFactionBlu",""] call BIS_fnc_returnConfigEntry;
-private _loadoutFactionOpf = [missionConfigFile,"loadoutFactionOpf",""] call BIS_fnc_returnConfigEntry;
-private _loadoutFactionInd = [missionConfigFile,"loadoutFactionInd",""] call BIS_fnc_returnConfigEntry;
-private _loadoutFactionCiv = [missionConfigFile,"loadoutFactionCiv",""] call BIS_fnc_returnConfigEntry;
+_loadoutFactionBlu = [missionConfigFile,"loadoutFactionBlu",""] call BIS_fnc_returnConfigEntry;
+_loadoutFactionOpf = [missionConfigFile,"loadoutFactionOpf",""] call BIS_fnc_returnConfigEntry;
+_loadoutFactionInd = [missionConfigFile,"loadoutFactionInd",""] call BIS_fnc_returnConfigEntry;
+_loadoutFactionCiv = [missionConfigFile,"loadoutFactionCiv",""] call BIS_fnc_returnConfigEntry;
 
 if (_loadoutFactionBlu != "") then {
     ["BLU_F", _loadoutFactionBlu] call GRAD_Loadout_fnc_FactionSetLoadout;
