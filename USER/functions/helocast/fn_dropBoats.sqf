@@ -18,7 +18,7 @@ _helo animate ["ramp_top", 1];
 		};
 
 		playSound3D ["a3\sounds_f\vehicles\soft\noises\slipping_tires_05.wss", _boat, false, getPosASL _boat, 3]; 
-		[_boat, [(velocityModelSpace _boat select 0), (velocityModelSpace _helo select 1) - 6, (velocity _boat select 2)]] remoteExec ["setvelocityModelSpace", _boat]; 
+		[_boat, [(velocityModelSpace _boat select 0), (velocityModelSpace _helo select 1) - 6, (velocity _boat select 2)]] remoteExec ["setVelocityModelSpace", _boat]; 
 	}, 0.25, [_helo, _boat]] call CBA_fnc_addPerFrameHandler;
 
 	[
@@ -40,7 +40,7 @@ _helo animate ["ramp_top", 1];
 				};
 
 				playSound3D ["a3\sounds_f\vehicles\soft\noises\slipping_tires_05.wss", _boat, false, getPosASL _boat, 3]; 
-				[_boat, [(velocityModelSpace _boat select 0), (velocityModelSpace _helo select 1) - 6, (velocity _boat select 2)]] remoteExec ["setvelocityModelSpace", _boat]; 
+				[_boat, [(velocityModelSpace _boat select 0), (velocityModelSpace _helo select 1) - 6, (velocity _boat select 2)]] remoteExec ["setVelocityModelSpace", _boat]; 
 			}, 0.25, [_helo, _boat]] call CBA_fnc_addPerFrameHandler;
 		},
 		[_helo]

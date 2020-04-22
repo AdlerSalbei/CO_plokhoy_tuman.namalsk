@@ -4,7 +4,8 @@ params [
 	"_pos", 
 	"_distance", 
 	["_type", "Land_CampingChair_V2_F"], 
-	["_count", count (playableUnits + switchableUnits)]
+	["_count", count (playableUnits + switchableUnits)],
+	["_fireplace", "Land_Campfire_burning"]
 ];
 
 private _positions = [];
@@ -28,6 +29,6 @@ private _chairs = [];
   	_chairs pushBack _chair;
 } forEach _positions;
 
-createVehicle ["Land_Campfire_burning", _pos, [], 0, "CAN_COLLIDE"];
+createVehicle [_fireplace, _pos, [], 0, "CAN_COLLIDE"];
 
 _chairs

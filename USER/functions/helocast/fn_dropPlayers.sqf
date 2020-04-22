@@ -1,5 +1,13 @@
 params ["_helo"];
 
+{
+	[{
+		params ["_unit", "_helo"];
+
+		_unit action ["Eject", _helo];
+	}, [_x, _helo], (1 + _forEachIndex)/2] call CBA_fnc_waitAndExecute;
+}forEach (fullCrew [_helo, "cargo", false]);
+
 [
 	{
 		params ["_helo"];
@@ -7,7 +15,8 @@ params ["_helo"];
 		private _crew = fullCrew [_helo, "cargo", false];
 
 		(_crew isEqualTo []) 
-	},{
+	},
+	{
 		params ["_helo"];
 
 		private _grp = group driver _helo;

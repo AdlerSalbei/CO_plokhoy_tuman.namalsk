@@ -7,7 +7,7 @@ private _trees = nearestTerrainObjects [[worldSize/2, worldSize/2, 0], [
 	], worldSize]; 
 
 systemChat str(count _trees);
-private _unkownTypes = [];
+GRAD_hiddenObjects = [];
  
 { 
 	private _tree = _x;
@@ -54,6 +54,7 @@ private _unkownTypes = [];
 
 		if (isNull _newTree) exitWith {diag_log format ["No Tree created, old: %1", _tree];};
 		_tree hideObjectGlobal true;
+		GRAD_hiddenObjects pushBack _tree;
 
 		_newTree setDir _dir;
 		_newTree setPosASL _pos;
@@ -61,3 +62,5 @@ private _unkownTypes = [];
 		[player, _pitchAndBank select 0, _pitchAndBank select 1] call BIS_fnc_setPitchBank;
 	};
 }forEach _trees;
+
+

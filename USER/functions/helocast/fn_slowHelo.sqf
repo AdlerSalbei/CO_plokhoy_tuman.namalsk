@@ -39,26 +39,26 @@ params ["_helo"];
 		_counter = _counter +1;  
 	};
 
-[
-	{
-		params ["_helo"];
-
-		private _speed = round (speed _helo);  
-		private _hight = round ((getPosASL _helo) select 2); 
-
-		(_hight <= 10 && {_speed <= 10})
-	}, 
-	{
-		params ["_helo"];
-
-		[_helo] call grad_user_fnc_dropBoats;
-		[{
+	[
+		{
 			params ["_helo"];
 
-			[_helo] call grad_user_fnc_dropPlayers;
-		}, [_helo], 3] call CBA_fnc_waitAndExecute;
-	}, 
-	[_helo]
-] call CBA_fnc_waitUntilAndExecute;
+			private _speed = round (speed _helo);  
+			private _hight = round ((getPosASL _helo) select 2); 
+
+			(_hight <= 10 && {_speed <= 10})
+		}, 
+		{
+			params ["_helo"];
+
+			[_helo] call grad_user_fnc_dropBoats;
+			[{
+				params ["_helo"];
+
+				[_helo] call grad_user_fnc_dropPlayers;
+			}, [_helo], 3] call CBA_fnc_waitAndExecute;
+		}, 
+		[_helo]
+	] call CBA_fnc_waitUntilAndExecute;
 
 },[_helo, group driver _helo]] call CBA_fnc_waitUntilAndExecute;
