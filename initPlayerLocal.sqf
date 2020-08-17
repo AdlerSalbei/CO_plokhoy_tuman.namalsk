@@ -5,19 +5,23 @@ if (didJIP) then {
 ["InitializePlayer", [player, true]] call BIS_fnc_dynamicGroups;
 grad_template_ratingEH = player addEventHandler ["HandleRating", {0}];
 
-
+0 fadeSound 0;
+cutText ["", "BLACK OUT", 0];
+/*
 ["CBA_loadingScreenDone", {
     [{time > (_this + 5)},{
-            if (!(didJIP) || {(didJIP && !(isNil "GRAD_USER_introOver"))}) then {
+        if (!(didJIP) || {(didJIP && !(isNil "GRAD_USER_introOver"))}) then {
             //if (isNull (getAssignedCuratorLogic player)) then {
                 STHud_UIMode = 0;
                 diwako_dui_main_toggled_off = true;
                 [] call GRAD_USER_fnc_intro;
             //};
+        }else{
+            cutText ["", "BLACK IN", 2];
         };
     }, time] call CBA_fnc_waitUntilAndExecute;
 }] call CBA_fnc_addEventHandler;
-    
+ */   
 
 [
 	"GRAD_seatPlayer", 

@@ -1,6 +1,7 @@
-cutText ["", "BLACK OUT", 1];
 ["BlackAndWhite", 0, false] call BIS_fnc_setPPeffectTemplate;
 playMusic ["Music_Hostile_Drone_Close_01", 0];
+
+0.5 fadeSound 1;
 
 [{
     private _filmgrain = ppEffectCreate ["FilmGrain", 2000];
@@ -9,14 +10,13 @@ playMusic ["Music_Hostile_Drone_Close_01", 0];
     _filmgrain ppEffectCommit 0;
 
     private _camera = "camera" camCreate (getPosASL camPos_01);
-    _camera camSetPos (getPosASL camPos_01);
+    _camera attachTo [(vehicle player), [5, -50, 0]];
     _camera camCommand "inertia on";
-    _camera camSetTarget ace_player;
+    _camera camSetTarget (vehicle player);
     _camera cameraEffect ["internal", "back"];
     _camera camSetFov 1;
     _camera camCommit 0;
-    _camera camSetPos (getPosASL camPos_01);
-    _camera camSetTarget ace_player;
+    _camera camSetTarget (vehicle player);
     _camera camCommit 1;
 
     showCinemaBorder true;
@@ -30,14 +30,13 @@ playMusic ["Music_Hostile_Drone_Close_01", 0];
 
             ["Default", 20, false] call BIS_fnc_setPPeffectTemplate;
 
-            _camera camSetPos (getPos camPos_02);
+            _camera camSetPos (getPosASL camPos_02);
             _camera camCommit 5;
 
             [{
                     params ["_camera"];
 
-                    _camera camSetPos (getPos camPos_03);
-                    _camera camCommit 5;
+                    
 
                     [{
                         cutText ["", "BLACK OUT", 1];
@@ -92,6 +91,6 @@ playMusic ["Music_Hostile_Drone_Close_01", 0];
                         }, _this, 10] call CBA_fnc_waitAndExecute;
                     }, _this, 10] call CBA_fnc_waitAndExecute;
             }, _this, 10] call CBA_fnc_waitAndExecute;
-        }, _this, 8] call CBA_fnc_waitAndExecute;
+        }, _this, 28] call CBA_fnc_waitAndExecute;
     }, [_camera, _filmgrain], 1] call CBA_fnc_waitAndExecute;
 }, [], 1] call CBA_fnc_waitAndExecute;

@@ -16,7 +16,7 @@ class GRAD_USER {
         file = "USER\functions\init";
         
         class intro {};
-        class replaceTrees {postInit = 1;};
+        //class replaceTrees {postInit = 1;};
     };
     class outro {
         file = "USER\functions\outro";
